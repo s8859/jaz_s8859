@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/templates/default.xhtml">
+
+    <ui:define name="content">
+        <p>
+            <h:form>
+                <h:dataTable value="#{motorbikeJsf.motorbikes}" var="item">
+                <f:facet name="header">#{msg.motorbikes}</f:facet>
+
+                <h:column>
+                    <f:facet name="header">#{msg.brand}</f:facet>
+                    #{item.brand}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">#{msg.model}</f:facet>
+                    #{item.model}
+                </h:column>
+                
+                <h:column>
+                    <h:commandLink value="#{msg.actionShow}" action="#{motorbikeJsf.show}"/>, 
+                    <h:commandLink value="#{msg.actionEdit}" action="#{motorbikeJsf.edit}"/>, 
+                    <h:commandLink value="#{msg.actionDelete}" action="#{motorbikeJsf.delete}"/>
+                </h:column>
+            </h:dataTable>
+            </h:form>
+        </p>
+    </ui:define>
+</ui:composition>

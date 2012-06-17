@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <h:form id="bikeform">
+        <h:panelGrid columns="3">
+
+            <h:outputText value="#{msg.brand}" />
+            <h:inputText id="brand" value="#{motorbikeJsf.motorbike.brand}" size="32">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="brand" style="color:red" />
+            
+            <h:outputText value="#{msg.model}" />
+            <h:inputText id="model" value="#{motorbikeJsf.motorbike.model}" size="32">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="model" style="color:red" />
+            
+            <h:outputText value="#{msg.maxSpeed}" />
+            <h:inputText id="maxSpeed" value="#{motorbikeJsf.motorbike.maxSpeed}" size="10">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="maxSpeed" style="color:red" />
+            
+        </h:panelGrid>
+        <p>
+            <h:commandButton value="#{msg.merge}" action="#{motorbikeJsf.merge}" />
+        </p>
+    </h:form>
+</ui:composition>
